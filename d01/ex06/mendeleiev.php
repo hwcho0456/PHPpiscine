@@ -9,6 +9,8 @@ table{margin:0 auto;border-collapse:collapse;width:100%;}
 td{width:calc(100%/18);border:1px solid black;padding:10px;}
 h1{text-align: left;margin:40px auto;}
 h4{font-size:24px;}
+.left{text-align: center; border:0}
+.top{text-align: center; border:0;}
 .dummy{border:0;}
 </style>";
 $data .= $style;
@@ -35,13 +37,30 @@ foreach ($elements as $element)
 	if ($num)
 		array_push($arrayElement, $elementUnit);
 }
-$position = 0;
+$position = -1;
 $number = 1;
 $find = 0;
+$period = 1;
+$roman = array("", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII");
+$data .= "<tr>";
+for ($i=0; $i<=18; $i++)
+{
+	$data .= "<td class=\"top\">";
+	$data .= "<h2>".$roman[$i]."</h2>";
+	$data .= "</td>";
+}
+$data .= "</tr>";
 while ($number <= 118)
 {
-	if ($position == 0)
+	if ($position == -1)
+	{
 		$data .= "<tr>";
+		$data .= "<td class=\"left\">";
+		$data .= "<h2>".$period."</h2>";
+		$data .= "</td>";
+		$period += 1;
+		$position += 1;
+	}
 
 	$find = 0;
 	foreach ($arrayElement as $ele)
@@ -75,7 +94,7 @@ while ($number <= 118)
 	$data .= "</td>";
 	if ($position == 18)
 	{
-		$position = 0;
+		$position = -1;
 		$data .= "</tr>";
 	}
 }
