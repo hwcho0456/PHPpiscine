@@ -1,8 +1,8 @@
 <?php
 class MyException extends Exception {
-public function error($errorMsg) {
-    echo $errorMsg."\n";
-    exit(-1);
-  }
+	public function __construct ($tag)
+	{
+		$this->message = "'$tag' is not allowed tag";
+	}
 }
 ?>

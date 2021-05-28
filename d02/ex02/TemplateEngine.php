@@ -15,7 +15,7 @@ class TemplateEngine {
 		$info = array(
 			'nom' => $object->getName(),
 			'prix' => $object->getPrice(),
-			'resistence' => $object->getResistence(),
+			'resistance' => $object->getResistence(),
 			'description' => $object->getDescription(),
 			'commentaire' => $object->getComment(),
 		);

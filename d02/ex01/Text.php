@@ -9,9 +9,17 @@ class Text {
 	}
 	public function render()
 	{
-		$res;
+		$res = "<!DOCTYPE html>";
+		$res .= "\n<html>";
+		$res .= "\n\t<head>\n\t\t<title>title</title>\n\t</head>";
+		$res .= "\n\t<body>";
 		foreach ($this->text as $ele)
+		{
+			$res .= "\n\t\t";
 			$res .= "<p>".$ele."</p>";
+		}
+		$res .= "\n\t<body>";
+		$res .= "\n</html>";
 		return $res;
 	}
 }

@@ -1,8 +1,8 @@
 <?php
 class HotBeverage {
-	private $name;
-	private $price;
-	private $resistence;
+	protected $name;
+	protected $price;
+	protected $resistence;
 
 	public function getName()
 	{
@@ -16,17 +16,5 @@ class HotBeverage {
 	{
 		return $this->resistence;
 	}	
-	public function setName($name)
-	{
-		$this->name = $name;
-	}	
-	public function setPrice($price)
-	{
-		$this->price = $price;
-	}	
-	public function setResistence($resistence)
-	{
-		$this->resistence = $resistence;
-	}
 }
 ?>

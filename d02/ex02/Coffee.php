@@ -5,9 +5,9 @@ class Coffee extends HotBeverage {
 
 	public function __construct($name, $price, $resistence, $description, $comment)
 	{
-		$this->setName($name);
-		$this->setPrice($price);
-		$this->setResistence($resistence);
+		$this->name = $name;
+		$this->price = $price;
+		$this->resistence =$resistence;
 		$this->description = $description;
 		$this->comment = $comment;
 	}

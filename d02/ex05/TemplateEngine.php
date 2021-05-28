@@ -7,7 +7,9 @@ class TemplateEngine {
 	public function createFile($fileName) 
 	{
 		$file = fopen($fileName, "w") or die("Cannot open the file");
-		fwrite($file, $this->text->getHTML());
+		$HTML = "<!DOCTYPE html>\n";
+		$HTML .= $this->text->getHTML();
+		fwrite($file, $HTML);		
 		fclose($file);
 	}
 }
