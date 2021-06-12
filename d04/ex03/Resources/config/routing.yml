@@ -1,0 +1,4 @@
+e03_homepage:
+    path:     /e03{trailingSlash}
+    defaults: { _controller: E03Bundle:Default:index, trailingSlash: "/" }
+    requirements: { trailingSlash : "[/]{0,1}" }  

@@ -1,0 +1,115 @@
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.fightpage {
+}
+.fightpage * {
+    box-sizing: border-box;
+}
+.fightpage .fighters {
+    height: 75vh;
+}
+.fightpage .fighter {
+    width: 100vw;
+    height: 50%;
+    padding: 25px;
+}
+
+.fightpage .fighter.player .status {
+    margin-left: 50px;
+}
+.fightpage .fighter.monster .status {
+    margin-right: 50px;
+}
+.fightpage .fighter .status {
+    max-width: 300px;
+    width: 50%;
+}
+.fightpage .fighter .status .name {
+    font-size: 18px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    margin-bottom: 20px;
+}
+.fightpage .fighter .status .hp-bar {
+    width: 100%;
+    background-color: #eee;
+    height: 30px;
+    position: relative;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+.fightpage .fighter .status .hp-bar .hp {
+    background: lime;
+    height: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.fightpage .fighter .status .hp-bar .hp-txt {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 22px;
+}
+.fightpage .fighter .img {
+    max-width: 400px;
+    height: 100%;
+}
+.fightpage .fighter .img img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 100%;
+    max-height: 32.5vh;
+}
+.fightpage .command {
+    display: flex;
+    border: 3px solid #333;
+    justify-content: center;
+    height: 25vh;
+    padding: 40px 80px;
+}
+.fightpage .command .btn {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    text-align: center;
+    line-height: 60px;
+    margin-right: 20px;
+    float: left;
+    display: block;
+    max-width: 40%;
+    width: 100%;
+    height: 60px;
+    border: 2px solid;
+    transition: all 0.25s ease;
+}
+.fightpage .command .btn button {
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    line-height: 60px;
+    display: block;
+    width: 100%;
+    transition: all 0.25s ease;
+}
+.fightpage .command .btn.att {
+    border-color: red;
+    color: red;
+}
+.fightpage .command .btn.run {
+    border-color: #333;
+}
+.fightpage .command .btn.att:hover {
+    background-color: red;
+    color: #fff;
+}
+.fightpage .command .btn button:hover {
+    background-color: #333;
+    color: #fff;
+}

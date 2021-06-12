@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{name}}</title>
+    </head>
+    <body>
+        <h1>{{name}}</h1>
+        <br><br>
+        {% if allowed %}
+        <ul>
+            {% for page in allowed %}
+            <li>
+                <a href="{{mainpage}}{{page}}">{{page}}</a>
+            </li>
+           {% endfor %}
+        </ul>
+        {% else %}
+        {% block content %}
+        {% endblock %}
+        {% endif%}
+    </body>
+</html>

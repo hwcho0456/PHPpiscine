@@ -1,0 +1,2 @@
+number: Le numéro de configuration est %number%
+count: '{0}aucun|{1}un|]1,Inf]nombre %count%'

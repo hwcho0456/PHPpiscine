@@ -1,0 +1,58 @@
+{% extends 'Game/base.html.twig' %}
+{% block style %}
+<link rel="stylesheet" href="{{asset('css/mymoviemon.css')}}">
+{% endblock %}
+{% block mymoviemon %}
+
+<div class="exit">
+    <form action="{{ path('game') }}" method="post">
+        <input type="hidden" name="username" value="{{user.getPlayerName()}}">
+        <button type="submit">BACK TO<br>MAP</button>
+    </form>
+</div>
+<div class="mymoviemons">
+    <!-- emtpy  -->
+    
+    <!-- not empty -->
+    {% for monster in user.getCapturedList() %}
+    <div class="box" onclick="toggleSlide(this)">
+        <div class="name">{{monster['Title']}}</div>
+        <div class="monster">
+            <div class="img">
+                {% if monster['Poster'] == "N/A" %}
+                <img src="/img/monster_default.png" alt="">
+                {% else %}
+                <img src="{{monster.Poster}}" alt="">
+                {% endif %}
+            </div>
+            <div>NAME : {{monster['Title']}}</div>
+            <div class="stats">
+                <div class="att">ATK : {{monster['att']}}</div>
+                <div>Director : {{monster['Director']}}</div>
+                <div>Year : {{monster['Year']}}</div>
+                <div>Plot : {{monster['Plot']}}</div>
+                <div>Actors : {{monster['Actors']}}</div>
+                <div>Awards : {{monster['Awards']}}</div>
+            </div>
+            <div class="rating">
+                    
+            </div>
+            
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block script %}
+<script>
+    function toggleSlide(element) {
+        var myHeight = element.offsetHeight;
+        var addHeight = element.children[1].offsetHeight+30;
+        if (myHeight == 66) {
+            element.style.height = myHeight+addHeight+"px";
+        } else {
+            element.style.height = "66px";
+        }
+    }
+</script>
+{% endblock %}

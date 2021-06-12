@@ -1,0 +1,35 @@
+{% extends 'Game/base.html.twig' %}
+{% block style %}
+<link rel="stylesheet" href="{{asset('css/main.css')}}">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
+{% endblock %}
+{% block game %}
+{% set location = player.getLocation() %}
+<table class="map">
+    <tbody>
+        {% for tr in 0..4 %}
+        <tr class="row clearfix">
+            {% for td in 0..4 %}
+            <td class="cell">
+                {% if
+                    (tr == (location['x']|number_format)+1) and (td == (location['y']|number_format)) or
+                    (tr == (location['x']|number_format)-1) and (td == (location['y']|number_format)) or
+                    (td == (location['y']|number_format)+1) and (tr == (location['x']|number_format)) or
+                    (td == (location['y']|number_format)-1) and (tr == (location['x']|number_format))
+                %}
+                <a href="move{{tr}}{{td}}" class="move"></a>
+                {% endif %}
+                {% if tr == location['x'] and td == location['y'] %}
+                <a href="#" class="active"></a>
+                {% endif %}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="option-wrap">
+    <a class="opt" href="/mymoviemon">MY MOVIEMONS</a>
+    <a class="opt" href="/menu">MENU</a>
+</div>
+{% endblock %}

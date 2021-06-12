@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Moviemon !</title>
+        <!-- css -->
+        {% block style %}{% endblock %}
+        <link rel="stylesheet" href="{{asset('css/reset.css')}}">
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        {% block home %}{% endblock %}
+        {% block option %}{% endblock %}
+        {% block game %}{% endblock %}
+        {% block load %}{% endblock %}
+        {% block fight %}{% endblock %}
+        {% block mymoviemon %}{% endblock %}
+    </body>
+    {% block script %}
+    {% endblock %}
+</html>

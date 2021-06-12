@@ -1,0 +1,57 @@
+{% extends 'Game/base.html.twig' %}
+{% block style %}
+<link rel="stylesheet" href="{{asset('css/fight.css')}}">
+{% endblock %}
+{% block fight %}
+<div class="fightpage">
+    
+    <div class="fighters">
+        <div class="monster fighter clearfix">
+            <div class="img fr">
+                {% if movie['Poster'] == "N/A" %}
+                <img src="/img/monster_default.png" alt="">
+                {% else %}
+                <img src="{{movie['Poster']}}" alt="">
+                {% endif %}
+            </div>
+            <div class="status fr">
+                <div class="name">{{movie['Title']}}</div>
+                <div class="hp-bar">
+                    <div class="hp" style="width: {{movie['hp']}}%;"></div>
+                    <div class="hp-txt">HP : {{movie['hp']}} / 100</div>
+                    <div class="hp-txt">AT : {{movie['att']}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="player fighter">
+            <div class="img fl">
+                <img src="https://images.gamebanana.com/img/ico/sprays/55b16c788fe01.png" alt="">
+            </div>
+            <div class="status fl">
+            <div class="name">{{user.getPlayerName()}}</div>
+            <div class="hp-bar">
+                <div class="hp" style="width: {{user.getPlayerHP()}}%;"></div>
+                <div class="hp-txt">HP : {{user.getPlayerHP()}} / 100</div>
+                <div class="hp-txt">AT : {{user.getPlayerAtt()}}</div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="command">
+        <div class="btn att">
+            <form action="{{ path('attack') }}" method="post">
+                <input type="hidden" name="username" value="{{app.session.get('user').getPlayerName()}}">
+                <button type="submit">ATTACK</button>
+            </form>
+        </div>
+        <div class="btn run">
+            <form action="{{ path('game') }}" method="post">
+                <input type="hidden" name="username" value="{{app.session.get('user').getPlayerName()}}">
+                <button type="submit">RUN</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

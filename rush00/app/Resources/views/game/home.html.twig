@@ -1,0 +1,21 @@
+{% extends 'Game/base.html.twig' %}
+{% block style %}
+<link rel="stylesheet" href="{{asset('css/bat.css')}}">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
+{% endblock %}
+{% block home %}
+<h1 class="game-title">RUSH00 - MovieMon</h1>
+<div class="game-img">
+    <div class="bat"></div>
+</div>
+{% endblock %}
+{% block option %}
+<div class="option-wrap">
+    <!-- save랑 cancel은 데이터가 있을경우에만 활성화 -->
+    <form action="{{ path('game') }}" method="post">
+        <input type="text" name="username" id="username" placeholder="USERNAME" required>
+        <button class="opt" type="submit">NEW</button>
+        <a class="opt" href="load">LOAD</a>
+    </form>
+</div>
+{% endblock %}

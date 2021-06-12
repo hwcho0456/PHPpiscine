@@ -1,0 +1,4 @@
+e00_firstpage:
+     pattern: e00/firstpage{trailingSlash}
+     defaults: { _controller: E00Bundle:Default:hello, trailingSlash: "/"}
+     requirements: { trailingSlash : "[/]{0,1}" }     

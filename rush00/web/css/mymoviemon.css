@@ -1,0 +1,64 @@
+.mymoviemons {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 22px;
+    padding: 25px;
+}
+.mymoviemons img {
+    display: block;
+    margin: 0 auto;
+    max-height: 400px;
+}
+.mymoviemons .box {
+    box-sizing: border-box;
+    padding: 15px;
+    overflow: hidden;
+    height: 66px;
+    border: 2px solid #333;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+/* .mymoviemons .box:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+.mymoviemons .box.on:hover {
+    background-color: #fff;
+    color: #000;
+} */
+.mymoviemons .box .name {
+    font-size: 32px;
+}
+.mymoviemons .monster {
+    margin-top: 30px;
+}
+.mymoviemons .monster .img {
+    border: 3px solid #333;
+    margin-bottom: 20px;
+}
+.mymoviemons .monster .stats {}
+.mymoviemons .monster .stats div {
+    margin-top: 15px;
+}
+.exit button {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    cursor: pointer;
+    position: absolute;
+    left: 50px;
+    top: 25px;
+    font-size: 30px;
+    text-align: center;
+    border: 2px solid #333333;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.25s ease;
+    background-color: #fff;
+}
+.exit button:hover {
+    background-color: #333;
+    color: #fff;
+}

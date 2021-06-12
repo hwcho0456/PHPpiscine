@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+    <h4> prev log <h4>
+    {% for log in logs %}
+        <p>{{log}}</p>
+    {% endfor %}
+</body>
+</html>

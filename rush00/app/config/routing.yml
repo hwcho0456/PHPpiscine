@@ -1,0 +1,64 @@
+home:
+    pattern: /{trailingSlash}
+    defaults: { _controller: AppBundle:Game:home, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+game:
+    pattern: /game{trailingSlash}
+    defaults: { _controller: AppBundle:Game:game, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+move:
+    pattern: /move{x}{y}{trailingSlash}
+    defaults: { _controller: AppBundle:Game:move, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+load:
+    pattern: /load{trailingSlash}
+    defaults: { _controller: AppBundle:Game:load, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+loadUser:
+    pattern: /loadUser{trailingSlash}
+    defaults: { _controller: AppBundle:Game:loadUser, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+save:
+    pattern: /save{trailingSlash}
+    defaults: { _controller: AppBundle:Game:save, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+menu:
+    pattern: /menu{trailingSlash}
+    defaults: { _controller: AppBundle:Game:menu, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+cancel:
+    pattern: /cancel{trailingSlash}
+    defaults: { _controller: AppBundle:Game:cancel, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+delete:
+    pattern: /delete/{name}{trailingSlash}
+    defaults: { _controller: AppBundle:Game:delete, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+fight:
+    pattern: /fight{trailingSlash}
+    defaults: { _controller: AppBundle:Game:fight, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+attack:
+    pattern: /attack{trailingSlash}
+    defaults: { _controller: AppBundle:Game:attack, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+
+mymoviemon:
+    pattern: /mymoviemon{trailingSlash}
+    defaults: { _controller: AppBundle:Game:mymoviemon, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }
+    
+result:
+    pattern: /result{trailingSlash}
+    defaults: { _controller: AppBundle:Game:result, trailingSlash: "/"}
+    requirements: { trailingSlash : "[/]{0,1}" }

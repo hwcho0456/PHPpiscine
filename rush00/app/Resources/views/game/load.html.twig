@@ -1,0 +1,35 @@
+{% extends 'Game/base.html.twig' %}
+{% block style %}
+<link rel="stylesheet" href="{{asset('css/bat.css')}}">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
+{% endblock %}
+{% block home %}
+<h1 class="game-title">RUSH00 - MovieMon</h1>
+<div class="game-img">
+    <div class="bat"></div>
+</div>
+{% endblock %}
+{% block load %}
+<div class="save-wrap clearfix">
+        {% for save in save %}
+        <div class="save">
+        <a href="delete/{{save}}" class="delete"></a>
+        <form action="{{ path('loadUser') }}" method="post">
+            <input type="hidden" name="username" value="{{save}}">
+            <button type="submit">{{save}}</button>
+        </form>
+        </div>
+        {% endfor %}
+</div>
+<div class="option-wrap">
+{%set name = name%}
+{% if name == NULL or save == NULL %}
+    <a class="opt" href="/">Cancel</a>
+{% else %}
+<form action="{{ path('game') }}" method="post">
+    <input type="hidden" name="username" value="{{name}}">
+    <button class="opt" type="submit">CANCEL</button>
+</form>
+{% endif %}
+</div>
+{% endblock %}

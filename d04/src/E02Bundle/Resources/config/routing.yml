@@ -1,0 +1,4 @@
+e02_homepage:
+    path:     /e02{trailingSlash}
+    defaults: { _controller: E02Bundle:Default:new, trailingSlash: "/" }
+    requirements: { trailingSlash : "[/]{0,1}" }  

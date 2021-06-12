@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+
+<body onkeypress="keypress()">
+ 
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    char <input type="text" id="keychar"><br>
+    keycode <input type="text" id="keycode"><br>
+    xpos <input type="text" id="x"><br>
+    ypos <input type="text" id="y"><br>
+ 
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+       
+        var ctx = canvas.getContext("2d");
+        var mapxpos = 2;
+        var mapypos = 2;
+        var xpos=25;
+        var ypos=25;
+        function keypress(){
+            var keycode=event.keyCode;    
+            if (keycode == 100 && xpos < 50 )
+                xpos += 1;
+            if (keycode == 97 && xpos > 0 )
+                xpos -= 1;
+            if (keycode == 119 && ypos < 50 )
+                ypos += 1;
+            if (keycode == 115 && ypos > 0 )
+                ypos -= 1;
+            document.getElementById('keychar').value=String.fromCharCode(keycode);
+            document.getElementById('keycode').value=keycode;
+            document.getElementById('x').value=xpos;
+            document.getElementById('y').value=ypos;          
+        }
+
+        function drawBall() {
+            ctx.beginPath();
+            if (xpos == 0 && mapxpos < 4) {
+                xpos = 45;
+                mapxpos += 1;
+            }
+            if (xpos == 50 && mapxpos > 0) {
+                xpos = 5;
+                mapxpos -= 1;
+            }
+            if (ypos == 0 && mapypos > 0) {
+                ypos = 45;
+                mapypos -= 1;
+            }
+            if (ypos == 50 && mapypos < 4) {
+                ypos = 5;
+                mapypos += 1;
+            }
+            ctx.arc(xpos*10, 500 - ypos*10, 10, 0, Math.PI*2);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawminimap() {
+            for (var i = 0; i < 5; i++) {
+                for (var j = 0; j < 5; j++) {
+                    ctx.beginPath();
+                    ctx.rect(480 - 20*i, 480 - 20*j, 20, 20);
+                    if (i == mapxpos && j == mapypos)
+                        ctx.fillStyle = "#FF0000";
+                    else
+                         ctx.fillStyle = "#00FF00";
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            }
+        }
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall();
+            drawminimap();
+    
+        }
+
+        setInterval(draw, 10);
+        
+    </script>
+ 
+    
+    
+</body>
+</html>

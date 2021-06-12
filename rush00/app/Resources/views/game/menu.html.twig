@@ -1,0 +1,22 @@
+{% extends 'Game/base.html.twig' %}
+{% block style %}
+<link rel="stylesheet" href="{{asset('css/bat.css')}}">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
+{% endblock %}
+{% block home %}
+<h1 class="game-title">RUSH00 - MovieMon - MENU</h1>
+<div class="game-img">
+    <div class="bat"></div>
+</div>
+{% endblock %}
+{% block option %}
+<div class="option-wrap">
+    <form action="{{ path('game') }}" method="post">
+        <a class="opt" href="/">NEW</a>
+        <a class="opt" href="save">SAVE</a>
+        <a class="opt" href="load">LOAD</a>
+        <input type="hidden" name="username" value="{{app.session.get('user').getPlayerName()}}">
+        <button class="opt" type="submit">CANCEL</button>
+    </form>
+</div>
+{% endblock %}

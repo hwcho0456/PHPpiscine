@@ -1,0 +1,9 @@
+e01_homepage:
+    path:     /e01{trailingSlash}
+    defaults: { _controller: E01Bundle:Default:base, trailingSlash: "/" }
+    requirements: { trailingSlash : "[/]{0,1}" }  
+
+e01_subpage:
+    path:     /e01/{page}/{trailingSlash}
+    defaults: { _controller: E01Bundle:Default:page, trailingSlash: "/" }
+    requirements: { trailingSlash : "[/]{0,1}" }  

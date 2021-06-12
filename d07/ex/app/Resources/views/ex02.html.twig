@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang={{app.request.locale}}>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    {{ 'number' | trans({"%number%" : number})}}
+    <br>
+    {{ 'count' | transchoice(app.request.get('count'))}}
+</body>
+</html>

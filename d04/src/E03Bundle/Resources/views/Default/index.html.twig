@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+<style>
+{% for class in color %}
+.{{class}} {
+    background-color: {{class}};
+    width:80px;
+    height:40px}
+{% endfor %}
+table { margin: 0 auto; }
+</style>
+{% endblock %}
+{% block body %}
+<table>
+    <thead>
+        <tr>
+        {% for th in color %}
+            <th><h2 style="color:{{th}};">{{th}}</h2></th>
+        {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for tr in opacity %}
+        <tr style="opacity: {{tr}}%;">
+        {% for td in color %}
+            <td class="{{td}}"></td>
+        {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
